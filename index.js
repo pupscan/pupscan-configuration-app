@@ -1,4 +1,4 @@
-const mainUrl = process.env.VIRTUAL_HOST ? process.env.VIRTUAL_HOST : "http://localhost:8080"
+const mainUrl = process.env.VIRTUAL_HOST ? "https://" + process.env.VIRTUAL_HOST : "http://localhost:8080"
 
 const dropboxUrl = "https://www.dropbox.com/oauth2/authorize?response_type=code&redirect_uri=" + mainUrl + "/qr&client_id=ib7yg6jhh4xb7m3&state=dropbox"
 
