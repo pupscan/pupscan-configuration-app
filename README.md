@@ -1,5 +1,7 @@
 # Pupscan configuration application
 
+![Application](./application.png)
+
 ## How to
 
 * `yarn install`
