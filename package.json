@@ -1,0 +1,16 @@
+{
+  "name": "pupscan-configuration",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "mustache-express": "^1.2.5",
+    "qrcode-npm": "0.0.3"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  }
+}
