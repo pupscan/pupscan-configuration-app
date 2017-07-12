@@ -16,7 +16,7 @@ app.get('/', (req, res) => res.render('index.mustache', {dropboxUrl: dropboxUrl}
 app.get('/wifi', (req, res) => res.render('wifi.mustache'))
 
 app.get('/qr', function (req, res) {
-    let qr = qrCode.qrcode(4, 'L')
+    let qr = qrCode.qrcode(5, 'L')
     qr.addData(JSON.stringify(req.query))
     qr.make()
     res.render('qr.mustache', {qrcode: qr.createImgTag(4)})
