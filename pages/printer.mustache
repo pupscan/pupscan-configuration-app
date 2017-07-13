@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pupscan</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1><span class="fa fa-print"></span> Printers</h1>
+    </div>
+    <p class="lead">Select your printer</p>
+    <br>
+    <div class="list-group">
+        {{ #printers }}
+        <a href="/qr?state=printer&accessToken={{accessToken}}&refreshToken={{refreshToken}}&printerId={{id}}"
+           class="list-group-item clearfix">
+            {{ #isOnline }}
+            <div class="pull-right" style="padding-top: 7px;" data-toggle="tooltip" data-placement="bottom" title="Online">
+                <i class="fa fa-check text-success fa-2x"></i>
+            </div>
+            {{ /isOnline }}
+            {{ ^isOnline }}
+            <div class="pull-right" style="padding-top: 7px;" data-toggle="tooltip" data-placement="bottom" title="Offline">
+                <i class="fa fa-close text-danger fa-2x"></i>
+            </div>
+            {{ /isOnline }}
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{ name }}</h4>
+                <p class="list-group-item-text">{{ description }}</p>
+            </div>
+        </a>
+        {{ /printers }}
+        {{ ^printers }}
+        <div href="/" class="list-group-item clearfix">
+            <div class="pull-right" style="padding-top: 7px;" data-toggle="tooltip" data-placement="bottom">
+                <i class="fa fa-frown-o fa-2x"></i>
+            </div>
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">No printer found</h4>
+                <p class="list-group-item-text">Try to add printers in Google Cloud Print</p>
+            </div>
+        </div>
+        {{ /printers }}
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="text-center">
+        <a href="/" class="btn btn-primary btn-lg">Configure a new service</a>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/365f8dafa1.js"></script>
+<script>$(() => $('[data-toggle="tooltip"]').tooltip())</script>
+</body>
+</html>
