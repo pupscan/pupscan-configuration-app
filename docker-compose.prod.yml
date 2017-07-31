@@ -1,0 +1,8 @@
+pup-conf:
+  image: pupscan/pupscan-configuration-app:latest
+  container_name: pupscan-config
+  restart: unless-stopped
+  environment:
+    - DROPBOX_CLIENT_ID=TO_COMPLETE
+    - GOOGLE_CLIENT_ID=TO_COMPLETE
+    - GOOGLE_CLIENT_SECRET=TO_COMPLETE
