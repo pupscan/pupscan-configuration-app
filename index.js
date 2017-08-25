@@ -23,8 +23,8 @@ app.set('view engine', 'mustache')
 app.set('views', __dirname + '/pages')
 
 app.get('/', (req, res) => res.render('index.mustache', {dropboxUrl: dropbox.url, googleUrl: google.url}))
-
 app.get('/wifi', (req, res) => res.render('wifi.mustache'))
+app.get('/mail', (req, res) => res.render('mail.mustache'))
 
 app.get('/printer', function (req, res) {
   promiseRequest({

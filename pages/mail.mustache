@@ -13,23 +13,15 @@
 <body>
 <div class="container">
     <div class="page-header">
-        <h1><span class="fa fa-wifi"></span>Wifi</h1>
+        <h1><span class="fa fa-wifi"></span> Mail</h1>
     </div>
-    <p class="lead">Enter the name and password of your local Wifi</p>
     <br>
     <form class="form-horizontal" action="/qr">
-        <input type="hidden" name="state" value="wifi">
-        <input type="hidden" name="type" value="wpa">
+        <input type="hidden" name="state" value="mail">
         <div class="form-group">
-            <label class="col-sm-4 control-label">Wifi name (SSID)</label>
+            <label for="inputPassword3" class="col-sm-4 control-label">Mail</label>
             <div class="col-sm-8">
-                <input class="form-control" name="ssid">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputPassword3" class="col-sm-4 control-label">Wifi Password</label>
-            <div class="col-sm-8">
-                <input class="form-control" name="password">
+                <input class="form-control" name="mail">
             </div>
         </div>
         <div class="form-group">
